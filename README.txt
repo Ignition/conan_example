@@ -7,6 +7,9 @@ source ./venv/bin/activate
 # using cmake_layout to put stuff in sensible places
 conan install . --build=missing -pr ./example_profile
 
+# Ensure the correct build enviroment
+source build/Release/generators/conanbuild.sh
+
 # Use preset that was generated to configure cmake
 cmake --preset conan-release
 # if you want look at build/Release/generators/CMakePresets.json to see what is being done for you
